@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <style>
+    /* Your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #000; /* Default text color */
+      transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+    }
+
+    .profile-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    li {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Buttons */
+    .button-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Animation */
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* Dark theme */
+    .dark-mode {
+      background-color: #222;
+      color: #fff; /* Text color changed to white */
+    }
+  </style>
+</head>
+<body>
+
+<div class="profile-container">
+  <h1>My Profile</h1>
+
+  <div class="button-container">
+    <a href="index.html" class="button">Home</a>
+    <button class="button" onclick="showSection('orders')">Orders</button>
+    <button class="button" onclick="showSection('your-account')">Your Account</button>
+    <button class="button" onclick="showSection('buy-again')">Buy Again</button>
+    <button class="button" onclick="showSection('your-list')">Your List</button>
+    <button class="button" onclick="toggleDarkMode()">Dark Mode</button>
+  </div>
+
+  <section class="orders hidden">
+    <h2>Orders</h2>
+    <!-- Placeholder for orders -->
+    <p>No orders yet.</p>
+  </section>
+
+  <section class="your-account hidden">
+    <h2>Your Account</h2>
+    <!-- Placeholder for account info -->
+    <p>Name: John Doe</p>
+    <p>Email: johndoe@example.com</p>
+    <p>Address: 123 Main St, City, Country</p>
+  </section>
+
+  <section class="buy-again hidden">
+    <h2>Buy Again</h2>
+    <!-- Placeholder for buy again items -->
+    <p>No items to buy again.</p>
+  </section>
+
+  <section class="your-list hidden">
+    <h2>Your List</h2>
+    <ul>
+      <li>
+        <img src="https://via.placeholder.com/150" alt="T-Shirt">
+        <p>T-Shirt - Size M</p>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/150" alt="Jeans">
+        <p>Jeans - Size 30</p>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/150" alt="Hoodie">
+        <p>Hoodie - Size L</p>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  function showSection(sectionName) {
+    const sections = document.querySelectorAll('.profile-container section');
+    sections.forEach(section => {
+      if (section.classList.contains(sectionName)) {
+        section.classList.remove('hidden');
+        section.classList.add('fade-in');
+      } else {
+        section.classList.add('hidden');
+        section.classList.remove('fade-in');
+      }
+    });
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

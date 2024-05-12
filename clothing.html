@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothify Clothing</title>
+    <style>
+        /* Existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            position: relative;
+            z-index: 2;
+        }
+        
+        nav {
+            background-color: #444;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+            padding: 0.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff6600;
+        }
+        
+        main {
+            padding: 2rem;
+        }
+        
+        .product {
+            display: flex;
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin-right: 1rem;
+            border-radius: 5px;
+        }
+        
+        .product-info {
+            flex-grow: 1;
+        }
+        
+        .product-description {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .product-button:hover {
+            background-color: #e06600;
+        }
+        
+        /* New CSS for tabs */
+        .tab-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+        
+        .tab {
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .tab.active {
+            background-color: #ff6600;
+            color: #fff;
+        }
+        
+        .tab:hover {
+            background-color: #e06600;
+        }
+    </style>
+    <script>
+        // JavaScript for image changing background
+        window.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            const images = ['https://t.ly/XF5p1']; // Add image URLs here
+            let currentIndex = 0;
+
+            function changeBackground() {
+                header.style.backgroundImage = `url(${images[currentIndex]})`;
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+
+            setInterval(changeBackground, 1); // Change image every 5 seconds
+        });
+        
+        // JavaScript for tab switching
+        window.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('section');
+        
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove 'active' class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add 'active' class to clicked tab
+                    tab.classList.add('active');
+        
+                    // Hide all sections
+                    sections.forEach(section => section.style.display = 'none');
+        
+                    // Show the corresponding section
+                    const target = tab.getAttribute('data-target');
+                    document.getElementById(target).style.display = 'block';
+                });
+            });
+        });
+
+        // JavaScript for adding product to cart
+        function addToCart(productName, price) {
+            alert(`Added ${productName} to cart. Price: ₹${price}`);
+            // Here you can implement further logic, like adding the product to a shopping cart
+        }
+    </script>
+</head>
+<body>
+    <header style="background-size: cover;">
+        <h1>Clothify Clothing</h1>
+    </header>
+    <nav>
+        <ul class="tab-container">
+            <li><a href="index.html" class="tab">Home</a></li>
+            <li><a href="#" class="tab active" data-target="women">Women</a></li>
+            <li><a href="#" class="tab" data-target="men">Men</a></li>
+            <li><a href="#" class="tab" data-target="kids">Kids</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="women">
+            <h2>Women's Clothing</h2>
+            <!-- Add women's clothing products here -->
+            <div class="product">
+                <img src="https://tinyurl.com/2arw6oz3" alt="Product 1">
+                <div class="product-info">
+                    <h3>Fancy Threads</h3>
+                    <p class="product-description">Beautiful summer dress from our latest collection.</p>
+                    <p>Price: ₹1599</p>
+                    <button class="product-button" onclick="addToCart('Fancy Threads', 1599)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/22kdvvnw" alt="Product 2">
+                <div class="product-info">
+                    <h3>Chic Couture</h3>
+                    <p class="product-description">Elegant evening gown for a special occasion.</p>
+                    <p>Price: ₹2499</p>
+                    <button class="product-button" onclick="addToCart('Chic Couture', 2499)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more women's clothing products here -->
+            <div class="product">
+                <img src="https://tinyurl.com/27m886s9" alt="Product 3">
+                <div class="product-info">
+                    <h3>Glamorous Gala</h3>
+                    <p class="product-description">Shimmering cocktail dress for glamorous events.</p>
+                    <p>Price: ₹1899</p>
+                    <button class="product-button" onclick="addToCart('Glamorous Gala', 1899)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/2afnj2ns" alt="Product 4">
+                <div class="product-info">
+                    <h3>Elegant Ensemble</h3>
+                    <p class="product-description">Sophisticated ensemble perfect for formal occasions.</p>
+                    <p>Price: ₹2799</p>
+                    <button class="product-button" onclick="addToCart('Elegant Ensemble', 2799)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/2a4dtfuj" alt="Product 5">
+                <div class="product-info">
+                    <h3>Boho Chic</h3>
+                    <p class="product-description">Trendy bohemian dress for a chic look.</p>
+                    <p>Price: ₹1299</p>
+                    <button class="product-button" onclick="addToCart('Boho Chic', 1299)">Add to Cart</button>
+                </div>
+            </div>
+            
+        </section>
+        <section id="men" style="display: none;">
+            <h2>Men's Clothing</h2>
+            <!-- Add men's clothing products here -->
+            <div class="product">
+                <img src="https://tinyurl.com/23as9ucs" alt="Product 1">
+                <div class="product-info">
+                    <h3>Urban Style</h3>
+                    <p class="product-description">Trendy t-shirt for a casual day out.</p>
+                    <p>Price: ₹799</p>
+                    <button class="product-button" onclick="addToCart('Urban Style', 799)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/28una4fu" alt="Product 2">
+                <div class="product-info">
+                    <h3>Classic Comfort</h3>
+                    <p class="product-description">Stylish denim jeans for everyday wear.</p>
+                    <p>Price: ₹1199</p>
+                    <button class="product-button" onclick="addToCart('Classic Comfort', 1199)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's clothing products here -->
+            <div class="product">
+                <img src="https://tinyurl.com/2bkv3ybb" alt="Product 3">
+                <div class="product-info">
+                    <h3>Sporty Attire</h3>
+                    <p class="product-description">Athletic tracksuit for sports and workouts.</p>
+                    <p>Price: ₹1499</p>
+                    <button class="product-button" onclick="addToCart('Sporty Attire', 1499)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/27nlx5t3" alt="Product 4">
+                <div class="product-info">
+                    <h3>Casual Chic</h3>
+                    <p class="product-description">Relaxed fit shirt for a laid-back style.</p>
+                    <p>Price: ₹999</p>
+                    <button class="product-button" onclick="addToCart('Casual Chic', 999)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/2cdfx4cx" alt="Product 5">
+                <div class="product-info">
+                    <h3>Formal Elegance</h3>
+                    <p class="product-description">Sleek suit for formal occasions and meetings.</p>
+                    <p>Price: ₹2999</p>
+                    <button class="product-button" onclick="addToCart('Formal Elegance', 2999)">Add to Cart</button>
+                </div>
+            </div>
+            
+        </section>
+        <section id="kids" style="display: none;">
+            <h2>Kids' Clothing</h2>
+            <!-- Add kids' clothing products here -->
+            <div class="product">
+                <img src="https://tinyurl.com/2cpcfdrg" alt="Product 1">
+                <div class="product-info">
+                    <h3>Cute Ensemble</h3>
+                    <p class="product-description">Adorable outfit for your little one.</p>
+                    <p>Price: ₹699</p>
+                    <button class="product-button" onclick="addToCart('Cute Ensemble', 699)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/223ysy4h" alt="Product 2">
+                <div class="product-info">
+                    <h3>Playtime Fun</h3>
+                    <p class="product-description">Colorful and comfy playwear for kids.</p>
+                    <p>Price: ₹499</p>
+                    <button class="product-button" onclick="addToCart('Playtime Fun', 499)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more kids' clothing products here -->
+            <div class="product">
+                <img src="https://tinyurl.com/2c5t79rv" alt="Product 3">
+                <div class="product-info">
+                    <h3>Cool Kids</h3>
+                    <p class="product-description">Stylish outfit for trendy kids.</p>
+                    <p>Price: ₹599</p>
+                    <button class="product-button" onclick="addToCart('Cool Kids', 599)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://tinyurl.com/284aaqq4" alt="Product 4">
+                <div class="product-info">
+                    <h3>Adventure Seeker</h3>
+                    <p class="product-description">Outdoor gear for adventurous little ones.</p>
+                    <p>Price: ₹899</p>
+                    <button class="product-button" onclick="addToCart('Adventure Seeker', 899)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://www.bookmycostume.com/cdn/shop/products/2911797_5_2000x.jpg" alt="Product 5">
+                <div class="product-info">
+                    <h3>Cute Critter</h3>
+                    <p class="product-description">Animal-themed clothing for animal lovers.</p>
+                    <p>Price: ₹699</p>
+                    <button class="product-button" onclick="addToCart('Cute Critter', 699)">Add to Cart</button>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>

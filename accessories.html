@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clohify Accessories</title>
+    <style>
+        /* Existing CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+
+        header {
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+            padding: 0.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6600;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+       .product {
+            display: flex;
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+       .product img {
+            width: 200px;
+            height: 200px;
+            margin-right: 1rem;
+            border-radius: 5px;
+        }
+
+       .product-info {
+            flex-grow: 1;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* New CSS for tabs and color fade effect */
+       .tab-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+
+       .tab {
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+       .tab.active {
+            background-color: #ff6600;
+            color: #fff;
+        }
+
+       .tab:hover {
+            background-color: #e06600;
+        }
+
+       .fade-header {
+            animation: fade 2s infinite;
+        }
+
+        @keyframes fade {
+            0% {background-color: #ff6600;}
+            50% {background-color: #e06600;}
+            100% {background-color: #ff6600;}
+        }
+
+        /* New CSS for product buttons */
+        .product-button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-button:hover {
+            background-color: #e06600;
+        }
+
+        /* New CSS for product descriptions */
+        .product-description {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* New CSS for home button */
+        .home-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #444;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            const images = ['https://t.ly/hc_h-', 'https://t.ly/l4fhr', 'https://t.ly/XF5p1']; // Add your image URLs here
+            let currentIndex = 0;
+
+            function changeBackground() {
+                header.style.backgroundImage = `url(${images[currentIndex]})`;
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+
+            setInterval(changeBackground, 3000); // Change image every 5 seconds
+        });
+    </script>
+</head>
+<body>
+    <header style="background-size: 40% auto;">
+        <h1 class="fade-header">Clothify Accessories</h1>
+    </header>
+    <nav>
+        <ul class="tab-container">
+            <li><a href="index.html" class="home-button">Home</a></li>
+            <li><a href="#women" class="tab">Women</a></li>
+            <li><a href="#men" class="tab">Men</a></li>
+            <li><a href="#kids" class="tab">Kids</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="women">
+            <h2>Women's Accessories</h2>
+            <div class="product">
+                <img src="https://shorturl.at/qyN17" alt="Women's accessory">
+                <div class="product-info">
+                    <h3>Elegant Scarf</h3>
+                    <p class="product-description">Stay warm and stylish with this elegant scarf. Made from high-quality fabric, it's perfect for any occasion.</p>
+                    <p>Price: ₹1299</p>
+                    <button class="product-button" onclick="addToCart('Elegant Scarf', 1299)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more women's accessories here -->
+            <div class="product">
+                <img src="https://shorturl.at/eiKX3" alt="Women's accessory">
+                <div class="product-info">
+                    <h3>Chic Sunglasses</h3>
+                    <p class="product-description">Protect your eyes in style with these chic sunglasses. Featuring UV protection lenses, they're both fashionable and functional.</p>
+                    <p>Price: ₹1499</p>
+                    <button class="product-button" onclick="addToCart('Chic Sunglasses', 1499)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more women's accessories here -->
+            <div class="product">
+                <img src="https://shorturl.at/nswy4" alt="Women's accessory">
+                <div class="product-info">
+                    <h3>Classic Tote Bag</h3>
+                    <p class="product-description">Carry your essentials in style with this classic tote bag. Spacious and versatile, it's perfect for everyday use.</p>
+                    <p>Price: ₹1999</p>
+                    <button class="product-button" onclick="addToCart('Classic Tote Bag', 1999)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more women's accessories here -->
+            <div class="product">
+                <img src="https://shorturl.at/lBDX6" alt="Women's accessory">
+                <div class="product-info">
+                    <h3>Statement Necklace</h3>
+                    <p class="product-description">Make a statement with this elegant necklace. Featuring intricate designs, it adds a touch of glamour to any outfit.</p>
+                    <p>Price: ₹1799</p>
+                    <button class="product-button" onclick="addToCart('Statement Necklace', 1799)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more women's accessories here -->
+            <div class="product">
+                <img src="https://shorturl.at/mrCY6" alt="Women's accessory">
+                <div class="product-info">
+                    <h3>Stylish Watch</h3>
+                    <p class="product-description">Stay on time and on trend with this stylish watch. Featuring a minimalist design, it's perfect for any occasion.</p>
+                    <p>Price: ₹2199</p>
+                    <button class="product-button" onclick="addToCart('Stylish Watch', 2199)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more women's accessories here -->
+        </section>
+        <section id="men">
+            <h2>Men's Accessories</h2>
+            <div class="product">
+                <img src="https://rb.gy/g1dqom" alt="Men's accessory">
+                <div class="product-info">
+                    <h3>Classic Leather Belt</h3>
+                    <p class="product-description">Add a touch of sophistication to your outfit with this classic leather belt. Durable and stylish, it's a must-have accessory.</p>
+                    <p>Price: ₹2199</p>
+                    <button class="product-button" onclick="addToCart('Classic Leather Belt', 2199)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/258f2m4w" alt="Men's accessory">
+                <div class="product-info">
+                    <h3>Sporty Watch</h3>
+                    <p class="product-description">Stay active and stylish with this sporty watch. With its sleek design and durable construction, it's perfect for everyday wear.</p>
+                    <p>Price: ₹1999</p>
+                    <button class="product-button" onclick="addToCart('Sporty Watch', 1999)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/28ctujmw" alt="Men's accessory">
+                <div class="product-info">
+                    <h3>Leather Wallet</h3>
+                    <p class="product-description">Organize your essentials in style with this leather wallet. Sleek and functional, it's perfect for everyday use.</p>
+                    <p>Price: ₹1599</p>
+                    <button class="product-button" onclick="addToCart('Leather Wallet', 1599)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/24glp8we" alt="Men's accessory">
+                <div class="product-info">
+                    <h3>Aviator Sunglasses</h3>
+                    <p class="product-description">Shield your eyes from the sun in style with these aviator sunglasses. Featuring polarized lenses, they offer both protection and clarity.</p>
+                    <p>Price: ₹1799</p>
+                    <button class="product-button" onclick="addToCart('Aviator Sunglasses', 1799)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/29zyznvk" alt="Men's accessory">
+                <div class="product-info">
+                    <h3>Classic Tie</h3>
+                    <p class="product-description">Complete your formal look with this classic tie. Made from high-quality silk, it adds a touch of elegance to any ensemble.</p>
+                    <p>Price: ₹1299</p>
+                    <button class="product-button" onclick="addToCart('Classic Tie', 1299)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more men's accessories here -->
+        </section>
+        <section id="kids">
+            <h2>Kids' Accessories</h2>
+            <div class="product">
+                <img src="https://tinyurl.com/275wuncb" alt="Kids' accessory">
+                <div class="product-info">
+                    <h3>Cute Hair Clips</h3>
+                    <p class="product-description">Keep your little one looking adorable with these cute hair clips. Perfect for adding a playful touch to any hairstyle.</p>
+                    <p>Price: ₹899</p>
+                    <button class="product-button" onclick="addToCart('Cute Hair Clips', 899)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more kids' accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/28axsv47" alt="Kids' accessory">
+                <div class="product-info">
+                    <h3>Colorful Backpack</h3>
+                    <p class="product-description">Let your child's personality shine with this colorful backpack. Spacious and durable, it's perfect for school or outings.</p>
+                    <p>Price: ₹1299</p>
+                    <button class="product-button" onclick="addToCart('Colorful Backpack', 1299)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more kids' accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/27tarjsw" alt="Kids' accessory">
+                <div class="product-info">
+                    <h3>Cartoon Watch</h3>
+                    <p class="product-description">Make telling time fun with this cartoon watch. Featuring their favorite characters, it's sure to be a hit!</p>
+                    <p>Price: ₹799</p>
+                    <button class="product-button" onclick="addToCart('Cartoon Watch', 799)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more kids' accessories here -->
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/71KZjybJo6L.jpg" alt="Kids' accessory">
+                <div class="product-info">
+                    <h3>Playful Headband</h3>
+                    <p class="product-description">Add a playful touch to any outfit with this cute headband. Perfect for parties or everyday wear!</p>
+                    <p>Price: ₹499</p>
+                    <button class="product-button" onclick="addToCart('Playful Headband', 499)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more kids' accessories here -->
+            <div class="product">
+                <img src="https://tinyurl.com/2ytxhbo6" alt="Kids' accessory">
+                <div class="product-info">
+                    <h3>Animal Backpack</h3>
+                    <p class="product-description">Let your child's imagination roam wild with this animal-themed backpack. Cute and functional, it's perfect for adventures!</p>
+                    <p>Price: ₹999</p>
+                    <button class="product-button" onclick="addToCart('Animal Backpack', 999)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more kids' accessories here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clohify Accessories. All rights reserved.</p>
+    </footer>
+</body>
+</html>
