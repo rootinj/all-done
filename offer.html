@@ -1,22 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="offer.css">
-    <script src="offer.js" defer></script>
-  </head>
-  <body>
-    <header id="header"></header>
+    <title>Offers</title>
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        /* Internal CSS for styling */
+        
+          
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .offer-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+            width: 300px;
+            text-align: center;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .offer-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .offer-description {
+            margin-bottom: 15px;
+        }
+        
+        .offer-link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .offer-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+      <section>
+          <!-- MAIN CONTAINER -->
+          <div id="container">
+              <!-- SHOP NAME -->
+              <div id="shopName"><a href="index.html"> <b>CLOTH</b>IFY </a></div>
+              <!-- COLLECTIONS ON WEBSITE -->
+              <div id="collection">
+                  <div id="clothing"><a href="clothing.html"> CLOTHING </a></div>
+                  <div id="accessories"><a href="accessories.html"> ACCESSORIES </a></div>
+                  <!-- AI RECOMMENDATION TAB -->
+                  <div id="aiRecommendation"><a href="https://www.blackbox.ai">AI </a></div>
+                  <div id="aiRecommendation"><a href="offer.html">OFFER </a></div>
+              </div>
+              <!-- SEARCH SECTION -->
+              <div id="search">
+                  <i class="fas fa-search search"></i>
+                  <input type="text" id="input" name="searchBox" placeholder="Search for Clothing and Accessories">
+              </div>
+              <!-- USER SECTION (CART AND USER ICON) -->
+              <div id="user">
+                  <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"> 0 </div></i></a>
+                  <a href="myprofile.html"> <i class="fas fa-user-circle userIcon"></i> </a>
+              </div>
+          </div>
+      </section>
+  </header>
+
+    <!-- Main Content -->
+    <br>
     <div class="container">
-      {% for product in products %}
-      <div class="product">
-        <img src="{{ product.image }}" alt="{{ product.name }}">
-        <h2 class="name">{{ product.name }}</h2>
-        <p class="description">{{ product.description }}</p>
-        <a class="link" href="{{ product.ecommerce_url }}">Buy on e-commerce site</a>
-      </div>
-      {% endfor %}
+        <div class="offer-card">
+            <h2 class="offer-title">50% Off Spring Collection!</h2>
+            <p class="offer-description">Check out our latest spring collection at half the price!</p>
+            <a class="offer-link" href="https://shorturl.at/bxHM0">Shop Now</a>
+        </div>
+        
+        <div class="offer-card">
+            <h2 class="offer-title">Limited Time Offer: Buy One Get One Free!</h2>
+            <p class="offer-description">Don't miss out on our exclusive BOGO offer. Shop now!</p>
+            <a class="offer-link" href="https://shorturl.at/FITZ6">Shop Now</a>
+        </div>
+        
+        <div class="offer-card">
+            <h2 class="offer-title">Flash Sale: Up to 70% Off!</h2>
+            <p class="offer-description">Hurry! Grab your favorite items at unbeatable prices!</p>
+            <a class="offer-link" href="https://shorturl.at/djHL6">Shop Now</a>
+        </div>
+
+        <!-- Additional Offer Tabs -->
+        <div class="offer-card">
+            <h2 class="offer-title">Summer Clearance Sale!</h2>
+            <p class="offer-description">Beat the heat with our summer clearance sale. Limited time offer!</p>
+            <a class="offer-link" href="https://www.meesho.com/agarwal-mens-chceck-shirts-combo/p/62u7eb">Shop Now</a>
+        </div>
+        
+        <div class="offer-card">
+            <h2 class="offer-title">Back to School Specials</h2>
+            <p class="offer-description">Get ready for school with our back to school specials. Shop now!</p>
+            <a class="offer-link" href="https://shorturl.at/ruNR1">Shop Now</a>
+        </div>
+        
+        <div class="offer-card">
+            <h2 class="offer-title">Winter Wonderland Deals</h2>
+            <p class="offer-description">Embrace the chill with our winter wonderland deals. Don't miss out!</p>
+            <a class="offer-link" href="https://www.hugoboss.com/in/en/water-repellent-jacket-in-a-regular-fit/hbeu50520027_373.html">Shop Now</a>
+        </div>
     </div>
-  </body>
+
+    <!-- JavaScript for additional functionality -->
+    <script>
+        // Animation for offer cards on hover
+        const offerCards = document.querySelectorAll('.offer-card');
+        
+        offerCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Functionality to open offer links in new tab
+        const offerLinks = document.querySelectorAll('.offer-link');
+
+        offerLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.open(link.href, '_blank');
+            });
+        });
+    </script>
+</body>
 </html>
